@@ -1,0 +1,88 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<description>Simple Drools Fusion CEP demo.</description>
+	<artifactId>simple-drools-cep</artifactId>
+	<groupId>org.jboss.ddoyle.drools.cep.demo</groupId>
+	<version>1.0.0-SNAPSHOT</version>
+
+	<properties>
+		<version.org.kie>6.2.0.Final</version.org.kie>
+		<version.org.slf4j>1.7.5</version.org.slf4j>
+		<version.ch.qos.logback>1.1.0</version.ch.qos.logback>
+		<version.commons.lang>2.6</version.commons.lang>
+	</properties>
+	<dependencies>
+
+		<!-- Drools dependencies. -->
+		<dependency>
+			<groupId>org.kie</groupId>
+			<artifactId>kie-api</artifactId>
+			<version>${version.org.kie}</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.drools</groupId>
+			<artifactId>drools-core</artifactId>
+			<version>${version.org.kie}</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.drools</groupId>
+			<artifactId>drools-compiler</artifactId>
+			<version>${version.org.kie}</version>
+			<scope>compile</scope>
+		</dependency>
+		<!-- Third party dependencies. -->
+		<dependency>
+			<groupId>commons-lang</groupId>
+			<artifactId>commons-lang</artifactId>
+			<version>${version.commons.lang}</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>${version.org.slf4j}</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-core</artifactId>
+			<version>${version.ch.qos.logback}</version>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+			<version>${version.ch.qos.logback}</version>
+			<scope>runtime</scope>
+		</dependency>
+	</dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.1</version>
+				<configuration>
+					<source>1.7</source>
+					<target>1.7</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<configuration>
+					<archive>
+						<manifest>
+							<addClasspath>true</addClasspath>
+							<classpathPrefix>/Users/ddoyle/.m2/repository/</classpathPrefix>
+							<classpathLayoutType>repository</classpathLayoutType>
+							<mainClass>org.jboss.ddoyle.brms.cep.ha.Main</mainClass>
+						</manifest>
+					</archive>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>

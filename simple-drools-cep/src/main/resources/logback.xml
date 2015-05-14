@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <appender name="consoleAppender" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <!-- %l lowers performance -->
+            <!--<pattern>%d [%t] %-5p %l%n  %m%n</pattern>-->
+            <pattern>%d [%p] [%t] [%C] %-5p %m%n</pattern>
+        </encoder>
+    </appender>
+    
+    <!-- 
+    <appender name="fileAppender" class="ch.qos.logback.core.FileAppender">
+        <file>${user.home}/ha-cep-brms/log/ha-cep-brms-${rhsummit2014.hornetq.client.id}.log</file>
+        <append>true</append>
+        <encoder>
+    -->
+        <!--
+            <pattern>%-4relative [%thread] %-5level %logger{35} - %msg %n</pattern>
+        -->
+        
+    <!-- 
+            <pattern>%d [%p] [%t] [%C] %-5p %m%n</pattern>
+        </encoder>
+    </appender>
+     -->
+    
+    <logger name="org.kie" level="info"/>
+    
+    <logger name="org.drools" level="info" />
+    
+    <logger name="org.jboss.ddoyle" level="info" />  
+    
+    <root level="warn"><!-- TODO We probably want to set default level to warn instead -->
+        <appender-ref ref="consoleAppender"/>
+        <!-- 
+        <appender-ref ref="fileAppender" />
+         -->
+    </root>
+
+</configuration>
