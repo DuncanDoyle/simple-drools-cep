@@ -17,7 +17,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * 
+ *
  * @author <a href="mailto:duncan.doyle@redhat.com">Duncan Doyle</a>
  */
 public class Main {
@@ -42,14 +42,14 @@ public class Main {
 			//Load the facts/events from our CSV file.
 			InputStream eventsInputStream = Main.class.getClassLoader().getResourceAsStream(EVENTS_CSV_FILE);
 			List<Event> events = FactsLoader.loadEvents(eventsInputStream);
-			
+
 			for (Event nextEvent: events) {
 				//Insert the event into the session
 				insert(kieSession, CEP_STREAM, nextEvent);
 				//And now, fire the rules. In a real application, you probably want to batch the inserts instead of firing rules after every insert.
 				kieSession.fireAllRules();
 			}
-		
+
 		} finally {
 			/*
 			 * Disposing session here as this is just a demo. If we would run a real CEP application, we would leave the session open and
@@ -58,12 +58,13 @@ public class Main {
 			LOGGER.info("Disposing session.");
 			kieSession.dispose();
 		}
+		System.exit(0);
 	}
 
 	/**
 	 * Inserts the {@link Fact} into a given <code>Drools Fusion Stream</code> of the {@link KieSession} and advances the PseudoClock to the
 	 * time of the event.
-	 * 
+	 *
 	 * @param kieSession
 	 * @param stream
 	 * @param fact
