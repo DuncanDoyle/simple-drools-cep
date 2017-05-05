@@ -7,7 +7,7 @@
 	<version>1.0.0-SNAPSHOT</version>
 
 	<properties>
-		<version.org.kie>6.2.0.Final</version.org.kie>
+		<version.org.kie>6.5.0.Final</version.org.kie>
 		<version.org.slf4j>1.7.5</version.org.slf4j>
 		<version.ch.qos.logback>1.1.0</version.ch.qos.logback>
 		<version.commons.lang>2.6</version.commons.lang>
@@ -75,14 +75,26 @@
 				<configuration>
 					<archive>
 						<manifest>
-							<addClasspath>true</addClasspath>
-							<classpathPrefix>/Users/ddoyle/.m2/repository/</classpathPrefix>
-							<classpathLayoutType>repository</classpathLayoutType>
-							<mainClass>org.jboss.ddoyle.brms.cep.ha.Main</mainClass>
+							<mainClass>org.jboss.ddoyle.drools.cep.demo.Main</mainClass>
 						</manifest>
 					</archive>
 				</configuration>
 			</plugin>
+			<plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>exec-maven-plugin</artifactId>
+        <version>1.6.0</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>java</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <mainClass>org.jboss.ddoyle.drools.cep.demo.Main</mainClass>
+        </configuration>
+      </plugin>
 		</plugins>
 	</build>
 </project>

@@ -9,3 +9,5 @@ This allows us to:
 * not depend on the actual progression of time. We can replay events that occur minutes, hours or even days apart in a number of seconds.
 
 To run the demo, simply run the `org.jboss.ddoyle.drools.cep.demo.Main` class.
+
+  mvn clean package exec:java
