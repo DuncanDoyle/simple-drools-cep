@@ -10,4 +10,6 @@ This allows us to:
 
 To run the demo, simply run the `org.jboss.ddoyle.drools.cep.demo.Main` class.
 
+```
   mvn clean package exec:java
+```
